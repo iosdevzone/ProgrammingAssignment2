@@ -1,5 +1,5 @@
-## This file provides functions for creating a manipulating an
-## an object that wraps a matrix allowing the matrix inverse to 
+## This file provides functions for creating and manipulating an
+## an object that wraps a matrix, allowing the matrix inverse to 
 ## be cached.
 ##
 ## To use the functions you first create a matrix and 
@@ -72,11 +72,10 @@ makeCacheMatrix <- function(x = matrix()) {
 #' It if is necessary to calculate the inverse the result
 #' is cached for future calls.
 #' 
-#' @param x and wrapped matrix obtained from a call to makeCacheMatrix
+#' @param x a wrapped matrix obtained from a call to makeCacheMatrix
 #' @return the inverse of the matrix wrapped by x
 #' @seealso makeCacheMatrix
 cacheSolve <- function(x) {
-    ## Return a matrix that is the inverse of 'x'
     inverse <- x$getinverse()
     if(!is.null(inverse)) {
         message("returning cached inverse")
